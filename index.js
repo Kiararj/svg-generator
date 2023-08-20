@@ -1,11 +1,49 @@
-//parent class class Shape 
+// Package needed 
+const inquirer = require("inquirer");
+const fs = require('fs');
 
-//child class class Triangle
+// Array of prompts
+const prompts = [
+    {
+    type: "input",
+    message: "Enter three characters:",
+    name: "name",
+    },
+    {
+    type: "input",
+    message: "What is your text color? (Use color name or HEX)",
+    name: "textColor",
+    },
+    {
+    type: "list",
+    message: "Choose a shape:",
+    name: "shape",
+    choices: ["Circle", "Triangle", "Square"], 
+    },
+    {
+    type: "input",
+    message: "What is your shape color? (Use color name or HEX)",
+    name: "shapeColor",
+    }
+];
 
-//child class class Circle
+// Function to create SVG file
+function writeToFile(fileName, data){
+    const svgFileContent = generateSVG(data);
 
-//child class class Square
+    fs.writeFile(fileName, svgFileContent, (err) =>
+      err ? console.log(err) : console.log("Successfully created SVG file!")
+  );
+};
 
-// const shape = new Triangle();
-// shape.setColor("blue");
-// expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+// Function to initialize app
+function init(){
+    inquirer
+    .prompt(prompts)
+    .then((response) => {
+    console.log(response)
+    writeToFile(`${data.title}.svg`, response)
+    });
+}
+
+
