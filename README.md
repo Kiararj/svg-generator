@@ -1,5 +1,4 @@
 # SVG Generator
-
 ## Description
 
 This project was built to generate a quick SVG logo with three characters. I learned about using classes for objects in JavaScript, more on using the inquirer npm package, and how to create tests using Jest.
@@ -10,6 +9,8 @@ To use this command line application open your Terminal and run npm install to i
 
 ## Usage
 
+This command line application is used to generate an SVG logo with three letters. Answer the four questions you are prompted with to customize your logo's color and 
+shape. Demo: https://drive.google.com/file/d/17tq8ksrTj_Q81zeImBttga2Q1OFNHDMh/view?usp=sharing
 
 ## Credits
 
